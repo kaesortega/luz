@@ -15,7 +15,7 @@ export default function CalculoVer({params}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/calculos/" + id)
+        const response = await fetch(`${env.protocol}://${env.api}/api/calculos/` + id)
 
         if (response.ok){
           const data = await response.json()

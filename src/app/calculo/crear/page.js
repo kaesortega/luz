@@ -124,7 +124,7 @@ export default function Calculo({calculoDto}){
     });
 
     try {
-      const response = await fetch('http://localhost:8080/api/calculos/guardar', {
+      const response = await fetch(`${env.protocol}://${env.api}/api/calculos/guardar`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

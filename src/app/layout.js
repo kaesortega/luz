@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import env from "./env";
 
 export default function RootLayout({ children }) {
 
@@ -10,7 +11,8 @@ export default function RootLayout({ children }) {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/calculos')
+        
+        const response = await fetch(`${env.protocol}://${env.api}/api/calculos`)
   
         if (response.ok){
           const data = await response.json()
