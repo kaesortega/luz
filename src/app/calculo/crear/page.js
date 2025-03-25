@@ -1,6 +1,8 @@
 'use client'
 import { useEffect, useState } from "react";
 import Recibo from "../../components/recibo";
+import environment from "@/app/environment";
+
 
 export default function Calculo({calculoDto}){
     
@@ -124,7 +126,7 @@ export default function Calculo({calculoDto}){
     });
 
     try {
-      const response = await fetch(`${env.protocol}://${env.api}/api/calculos/guardar`, {
+      const response = await fetch(`${environment.protocol}://${environment.api}/api/calculos/guardar`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

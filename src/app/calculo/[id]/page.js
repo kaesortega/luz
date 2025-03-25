@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import { use, useEffect, useState } from "react";
 import Calculo from "../crear/page";
 
+import env from "./env";
+
 export default function CalculoVer({params}) {
 
   const unwrappedParams = use(params);  // Esto devolverá el objeto params resuelto.
