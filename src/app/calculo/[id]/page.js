@@ -2,8 +2,9 @@
 import { useRouter } from "next/router";
 import { use, useEffect, useState } from "react";
 import Calculo from "../crear/page";
+import environment from "@/app/environment";
 
-import env from "./env";
+
 
 export default function CalculoVer({params}) {
 
@@ -17,7 +18,7 @@ export default function CalculoVer({params}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${env.protocol}://${env.api}/api/calculos/` + id)
+        const response = await fetch(`${environment.protocol}://${environment.api}/api/calculos/` + id)
 
         if (response.ok){
           const data = await response.json()
